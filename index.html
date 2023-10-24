@@ -15,12 +15,24 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <section class="container">
+    <section class="container" id="app">
         <div class="carousel">
+            <div class="item">
+                <img :src="slides[currentIndex].image" alt="">
+                <div class="text">
+                    <h3>{{ slides[currentIndex].title }}</h3>
+                    <p>{{ slides[currentIndex].text }}</p>
+                </div>
+                
+                <div>
+                    <div class="arrow arrow-top"><i class="fa-solid fa-chevron-up"></i></div>
+                    <div class="arrow arrow-bottom"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+            </div>
+            
             
 
         </div>
-
     </section>
     <script src="./js/script.js"></script>
 </body>
