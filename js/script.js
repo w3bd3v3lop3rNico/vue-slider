@@ -1,8 +1,8 @@
-console.log(Vue)
+//console.log(Vue)
 
 const { createApp } = Vue
 
-console.log(createApp)
+//console.log(createApp)
 createApp({
     data() {
       return {
@@ -33,6 +33,25 @@ createApp({
       }
     },
     methods: {
-        
+        nextSlide() {
+            console.log('UP');
+            this.currentIndex++;
+            if (this.currentIndex == this.slides.length) {
+                this.currentIndex = 0;
+            }
+        },
+        prevSlide() {
+            console.log('DOWN');
+            // currentIndex = 0
+            if (this.currentIndex == 0) {
+                this.currentIndex = this.slides.length - 1;
+            } else {
+                this.currentIndex--;
+            }
+        },
+        changeImg(thumbIndex) {
+            console.log(thumbIndex)
+            this.currentIndex = thumbIndex
+        }
     }
   }).mount('#app')
